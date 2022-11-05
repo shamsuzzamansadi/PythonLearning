@@ -14,7 +14,8 @@ def daystX(nr_tag, kustom_message):
     
     return f"{nr_tag} tage sind {nr_tag*calculation_to_units} Stunde\n{kustom_message}"
    
-
+# the first validation was with if-else condition and the second one
+# is with try-catch or error handling way
 
 # def validateAndExecute():
 #     if(user_days_input.isdigit()):
@@ -35,9 +36,9 @@ def validateAndExecute():
         # we want to do conversion only for positive integers
         if user_input_number > 0:
             daysToUnits(user_input_number, "All good!")
-            daysToUnits(20, "Awesome!")
-            calculated_values_DE =  daystX(user_input_number, "Wonderschön!")  
-            print(calculated_values_DE)  
+            # daysToUnits(20, "Awesome!")
+            # calculated_values_DE =  daystX(user_input_number, "Wonderschön!")  
+            # print(calculated_values_DE)  
         elif user_input_number == 0:
             print("you've entered zero, please enter a positive number as a correct input")
     #except will catch the negative value without ValueError in it. With ValueError it doesn't see negative value as an error
@@ -49,7 +50,11 @@ while user_days_input != 'exit':
     # print(f"20 days are {20*calculation_to_minutes} minutes")
     # print(f"20 days are {20*calculation_to_seconds} seconds")
     user_days_input = input("Hey user, enter a number of days and I will convert it to hours\n")
-    for num_of_days_element in user_days_input.split():
+    # for set type input use set() function
+    # for num_of_days_element in set(user_days_input.split(", ")):
+    #     validateAndExecute()
+
+    for num_of_days_element in user_days_input.split(", "):
         validateAndExecute()
 
 
