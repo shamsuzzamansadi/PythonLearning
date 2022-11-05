@@ -32,6 +32,7 @@ def daystX(nr_tag, kustom_message):
 def validateAndExecute():
     try:
         user_input_number = int(num_of_days_element)
+        # we want to do conversion only for positive integers
         if user_input_number > 0:
             daysToUnits(user_input_number, "All good!")
             daysToUnits(20, "Awesome!")
